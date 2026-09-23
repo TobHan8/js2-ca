@@ -1,16 +1,18 @@
-import { API_KEY, BASE_SITE_URL } from "../constants";
-import { getToken } from '../'
+import { API_KEY, BASE_URL, AUTH_REGISTER_URL, AUTH_LOGIN_URL, ALL_POSTS_URL, SINGLE_POST_URL, staticToken } from "../constants.js";
 
 async function apiClient(endpoint, options = {}) {
 
-    const accessToken = getToken();
-    const { body, ...customOptions } = options;
+    const { body, authHeaders = true, ...customOptions } = options;
 
     const headers = {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${accessToken}`,
-        'X-Noroff-API-Key': API_KEY,
+        
     };
+
+    if (authHeaders) {
+        headers['Authorization'] = `Bearer ${staticToken}`;
+        headers['X-Noroff-API-Key'] = API_KEY;
+    }
 
     const config = {
         method: body ? 'POST' : 'GET',
@@ -26,7 +28,7 @@ async function apiClient(endpoint, options = {}) {
     }
 
     try {
-        const response = await fetch(BASE_SITE_URL + endpoint, config);
+        const response = await fetch(BASE_URL + endpoint, config);
 
         if (!response.ok) {
             const errorData = await response.json();
@@ -44,6 +46,10 @@ async function apiClient(endpoint, options = {}) {
         throw error;
     }
 }
+
+
+export const register = (body) => apiClient(AUTH_REGISTER_URL, {body, authHeaders: false})
+export const login = (body) => apiClient(AUTH_LOGIN_URL, { body, authHeaders: false});
 
 export const get = (endpoint) => apiClient(endpoint);
 export const post = (endpoint, body) => apiClient(endpoint, { body });
