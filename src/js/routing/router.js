@@ -1,4 +1,6 @@
-import { displayNotFound } from "../display/displays.js";
+import { displayNotFound, initNotFound } from '../displays/notFound.js';
+
+const notFoundRoute = { display: displayNotFound, init: initNotFound };
 
 export class Router {
     constructor(routes, contentElement) {
@@ -8,14 +10,17 @@ export class Router {
         window.addEventListener('hashchange', () => this.resolveRoute());
     }
 
-    navigate(path) {
+    static navigate(path) {
         window.location.hash = path;
     }
 
     resolveRoute() {
         const path = window.location.hash.slice(1) || '/';
-        const display = this.routes[path] || displayNotFound;
-        this.contentElement.innerHTML = display();
+        const route = this.routes[path] || notFoundRoute;
+        this.contentElement.innerHTML = route.display();
+        if (route && route.init) {
+            route.init();
+        }
     }
 }
 
