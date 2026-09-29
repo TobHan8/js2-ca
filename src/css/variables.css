@@ -1,0 +1,17 @@
+:root {
+
+    /* --- MAIN COLORS --- */
+    --color-primary: #2E7AFF;
+    --color-secondary: #98B9E5;
+    --color-white: #F0F0F0;
+
+
+    /* --- FONT STACK --- */
+    --font-main: serif;
+}
+
+header,
+footer {
+    color: var(--color-secondary);
+    background: var(--color-primary);
+}

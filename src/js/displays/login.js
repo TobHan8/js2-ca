@@ -3,7 +3,7 @@ import { state, logIn } from '../state/manageState.js';
 
 export function displayLogin() {
 
-    if (state.isLoggedIn) {
+    if (state.isLoggedIn) { // This will never display in reality, but makes the form inaccessible if isLoggedIn: true
         return `
 
         <div id="title-container" class="title-container">

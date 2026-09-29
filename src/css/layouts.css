@@ -1,0 +1,45 @@
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+}
+
+header {
+    z-index: 10;
+    display: flex;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: 100px;
+}
+
+main {
+    flex: 1;
+    position: relative;
+    z-index: 2;
+    margin: auto;
+    min-height: 100vh;
+}
+
+footer {
+
+}
+
+.title-container {
+    display: flex;
+    justify-content: center;
+}
+
+.index-container {
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 800px;
+    gap: 40px;
+}
+
+.index-post-container {
+
+}
