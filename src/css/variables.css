@@ -7,11 +7,15 @@
 
 
     /* --- FONT STACK --- */
-    --font-main: serif;
+    --font-main: 'Huninn', sans-serif;
 }
 
 header,
 footer {
     color: var(--color-secondary);
     background: var(--color-primary);
+}
+
+a {
+    text-decoration: none;
 }

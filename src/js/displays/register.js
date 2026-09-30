@@ -94,6 +94,8 @@ export function initRegister() {
 
                 if (apiReq) {
                     console.log('Success! Account registered!');
+                } else {
+                    return
                 }
             }
         });

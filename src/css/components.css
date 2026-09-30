@@ -1,0 +1,16 @@
+.publish-button {
+    padding: 15px 20px;
+    border: none;
+    border-radius: 25px;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    font-weight: bold;
+    font-size: 20px;
+}
+
+@media(hover: hover) {
+    .publish-button:hover {
+        opacity: 30%;
+        cursor: pointer;
+    }
+}

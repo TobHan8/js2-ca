@@ -1,0 +1,8 @@
+:root, input, a, h1, h2, p, span, textarea {
+    font-family: var(--font-main);
+}
+
+h1 {
+    color: var(--color-primary);
+}
+

@@ -7,12 +7,20 @@ export function displayIndex() {
         return `
 
         <div id="title-container" class="title-container">
+            <h1>CREATE NEW POST</h1>
+        </div>
+
+        <form id="create-post-form" name="create-post-form" class="create-post-form">
+            <input id="title" name="title" class="create-post-title" type="text" maxlength="30" minlength="3" placeholder="Choose a title for your post"></input>
+            <textarea id="body" name="body" class="post-input" maxlength="300" placeholder="What are we cackling about today...?"></textarea>
+            <button id="publish-button" class="publish-button">PUBLISH POST</button>
+        </form>
+
+        <div id="title-container" class="title-container">
             <h1>POST FEED</h1>
         </div>
 
-        <div id="index-container" class="index-container">
-        </div>
-
+        <div id="index-container" class="index-container"></div>
 
         `
     } else {
@@ -33,8 +41,9 @@ export async function initIndex() {
         
         allPosts.data.forEach(post => {
 
-            const indexPostContainer = document.createElement('div');
+            const indexPostContainer = document.createElement('a');
             indexPostContainer.classList.add('index-post-container');
+            indexPostContainer.href = '#/post/'+ `${post.id}`;
             indexContainer.appendChild(indexPostContainer);
 
             const indexPostTitle = document.createElement('h2');
@@ -49,11 +58,42 @@ export async function initIndex() {
 
             const indexCreated = document.createElement('span');
             indexCreated.classList.add('index-created');
-            indexPostBody.textContent = `${post.created}`;
+            indexCreated.textContent = `${post.created.slice(0, 10)}`;
             indexPostContainer.appendChild(indexCreated);
+
+            indexPostContainer.addEventListener('click', () => {
+                Router.navigate('/social/posts/' + `${post.id}`);
+            })
         });
 
+        const postForm = document.getElementById('create-post-form');
+
+        postForm.addEventListener('submit', async (event) => {
+            event.preventDefault();
+            const formData = new FormData(event.target);
+            const formObject = Object.fromEntries(formData);
+
+            const apiReq = await createPost(formObject);
+
+            if (apiReq) {
+                console.log('Post created successfully!');
+                console.log(apiReq);
+
+                setTimeout(() => {
+                    Router.navigate('/');
+                }, 2000);
+
+            } else {
+                return
+            }
+        });
+
+
     } else {
-        Router.navigate('/login');
+        setTimeout(() => {
+            Router.navigate('/login');
+        }, 2000);
     }
+
+
 }
