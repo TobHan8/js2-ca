@@ -16,9 +16,9 @@ export function displayRegister() {
             <h1>Register new account</h1>
         </div>
 
-        <div id="register-container">
+        <div id="register-container" class="register-container">
 
-            <form id="register-form" name="register-form">
+            <form id="register-form" name="register-form" class="register-form">
 
                 <label for="name">Username</label>
                 <input id="name" name="name" type="text" placeholder="Select your username" maxlength="20" pattern="[\\w_]+" required="true">
@@ -32,7 +32,7 @@ export function displayRegister() {
                 <label for="password2">Confirm password</label>
                 <input id="password2" name="password2" type="password" placeholder="Repeat password" minlength="8" required="true">
 
-                <button id="submit-btn">SUBMIT</button>
+                <button id="submit-btn" class="submit-btn">REGISTER</button>
 
             </form>
 

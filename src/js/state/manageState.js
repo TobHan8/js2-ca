@@ -1,5 +1,7 @@
 import { registerUser, loginUser } from '../services/authService.js';
 import { writeToken, readToken, deleteToken, writeCurrentUser, readCurrentUser, deleteCurrentUser } from '../storage/store.js';
+import { Router } from '../routing/router.js';
+import { displayHeader } from '../components/header.js';
 
 export const state = {
     token: null,
@@ -56,4 +58,7 @@ export function logOut() {
     state.token = null;
     state.currentUser = null;
     state.isLoggedIn = false;
+
+    displayHeader();
+    Router.navigate('/login');
 }

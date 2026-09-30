@@ -12,7 +12,6 @@
 
 header,
 footer {
-    color: var(--color-secondary);
     background: var(--color-primary);
 }
 

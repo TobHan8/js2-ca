@@ -1,4 +1,4 @@
-.publish-button {
+.publish-button, {
     padding: 15px 20px;
     border: none;
     border-radius: 25px;
@@ -13,4 +13,177 @@
         opacity: 30%;
         cursor: pointer;
     }
+}
+
+/* --- HEADER --- */
+.header-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    padding: 2rem;
+}
+
+.header-buttons i {
+    font-size: 44px;
+}
+
+.toggleBtn-container {
+    display: flex;
+    flex: 1;
+}
+
+.toggle-btn,
+.header-create-button,
+.header-profile-btn {
+    background: transparent;
+    border: none;
+    transition: 0.3s ease;
+    color: var(--color-white);
+}
+
+.dropdown-nav {
+    z-index: 5;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    font-size: 22px;
+    top: 100%;
+    left: 0;
+    width: 400px;
+    background: var(--color-primary);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    z-index: 25;
+}
+
+.dropdown-nav a {
+    z-index: 5;
+    display: flex;
+    gap: 10px;
+    margin: 2rem;
+    flex-direction: row-reverse;
+    align-items: center;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s ease;
+    color: var(--color-white);
+}
+
+.header-buttons-right {
+    display: flex;
+    justify-content: flex-end;
+    flex: 1;
+    align-items: center;
+    gap: 60px;
+}
+
+.header-login-btn {
+    background-color: var(--color-white);
+    color: var(--color-primary);
+    border-radius: 25px;
+    padding: 12px 30px;
+    font-size: 15px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.header-register-btn {
+    background-color: var(--color-white);
+    color: var(--color-primary);
+    border-radius: 25px;
+    padding: 12px 25px;
+    font-size: 15px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.create-button i {
+    font-size: 37px;
+}
+
+.menu-log-out-btn {
+    display: flex;
+    flex-direction: row-reverse;
+    font-size: 20px;
+    font-weight: bold;
+    gap: 10px;
+    background: transparent;
+    color: var(--color-white);
+    border: none;
+    margin: 2rem;
+    margin-left: 27px;
+    transition: 0.3s ease;
+}
+
+.menu-log-out-btn i {
+    font-size: 25px;
+}
+
+.header-logo {
+    height: 46px;
+    width: 100%;
+    transition: 0.3s ease;
+}
+
+.header-create-btn {
+    transition: 0.3s ease;
+    color: var(--color-white);
+}
+
+/* --- SUBMIT REGISTER/LOGIN BUTTON --- */
+.submit-btn {
+    padding: 12px 30px;
+    border: none;
+    border-radius: 25px;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    font-weight: bold;
+    font-size: 15px;
+    width: fit-content;
+    align-self: center;
+}
+
+
+/* --- ALL HOVER EFFECTS WHEN SUPPORTED --- */
+@media (hover: hover) {
+    .toggle-btn:hover,
+    .create-button:hover,
+    .header-profile-btn:hover,
+    nav a:hover,
+    .header-login-btn:hover,
+    .header-register-btn:hover,
+    .menu-log-out-btn:hover,
+    .profile-log-out-btn:hover,
+    .close-btn:hover,
+    .header-logo:hover,
+    .submit-btn:hover,
+    .register-link:hover,
+    .login-link:hover {
+        opacity: 30%;
+        cursor: pointer;
+    }
+}
+
+
+/* --- ACTIVE/CLICK EFFECT FOR MOBILE --- */
+.toggle-btn:active,
+.create-button:active,
+.header-profile-btn:active,
+nav a:active,
+.header-login-btn:active,
+.header-register-btn:active,
+.menu-log-out-btn:active,
+.profile-log-out-btn:active,
+.close-btn:active,
+.header-logo:active,
+.submit-btn:active,
+.register-link:active,
+.login-link:active {
+    opacity: 30%;
+    cursor: pointer;
 }
