@@ -15,7 +15,8 @@ export class Router {
     }
 
     resolveRoute() {
-        const path = window.location.hash.slice(1) || '/';
+        const raw = window.location.hash.slice(1) || '/';
+        const path = raw.split('?')[0];
         const route = this.routes[path] || notFoundRoute;
         this.contentElement.innerHTML = route.display();
         if (route && route.init) {

@@ -43,7 +43,7 @@ export async function initIndex() {
 
             const indexPostContainer = document.createElement('a');
             indexPostContainer.classList.add('index-post-container');
-            indexPostContainer.href = '#/post/'+ `${post.id}`;
+            indexPostContainer.href = '#/post?id='+ post.id;
             indexContainer.appendChild(indexPostContainer);
 
             const indexPostTitle = document.createElement('h2');
@@ -58,12 +58,8 @@ export async function initIndex() {
 
             const indexCreated = document.createElement('span');
             indexCreated.classList.add('index-created');
-            indexCreated.textContent = `${post.created.slice(0, 10)}`;
+            indexCreated.textContent = `Created: ${post.created.slice(0, 10)}`;
             indexPostContainer.appendChild(indexCreated);
-
-            indexPostContainer.addEventListener('click', () => {
-                Router.navigate('/social/posts/' + `${post.id}`);
-            })
         });
 
         const postForm = document.getElementById('create-post-form');

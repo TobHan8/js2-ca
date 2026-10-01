@@ -6,7 +6,7 @@ export function getAllPosts() {
 }
 
 export function getSinglePost(id) {
-    return get(SINGLE_POST_URL + id);
+    return get(SINGLE_POST_URL + id + '?_author=true&_comments=true');
 }
 
 export function createPost(body) {

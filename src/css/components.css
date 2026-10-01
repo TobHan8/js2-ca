@@ -1,5 +1,5 @@
-.publish-button, {
-    padding: 15px 20px;
+.publish-button {
+    padding: 12px 30px;
     border: none;
     border-radius: 25px;
     background-color: var(--color-primary);
@@ -148,6 +148,26 @@
     align-self: center;
 }
 
+/* --- SINGLE POST BUTTONS --- */
+.single-post-edit-btn,
+.single-post-del-btn {
+    padding: 10px 18px;
+    border: none;
+    border-radius: 25px;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.single-post-edit-btn {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+}
+
+.single-post-del-btn {
+    background-color: var(--color-red);
+    color: var(--color-white);
+}
+
 
 /* --- ALL HOVER EFFECTS WHEN SUPPORTED --- */
 @media (hover: hover) {
@@ -163,7 +183,10 @@
     .header-logo:hover,
     .submit-btn:hover,
     .register-link:hover,
-    .login-link:hover {
+    .login-link:hover,
+    .single-post-avatar-container:hover,
+    .single-post-del-btn:hover,
+    .single-post-edit-btn:hover {
         opacity: 30%;
         cursor: pointer;
     }
@@ -183,7 +206,10 @@ nav a:active,
 .header-logo:active,
 .submit-btn:active,
 .register-link:active,
-.login-link:active {
+.login-link:active,
+.single-post-avatar-container:active,
+.single-post-del-btn:active,
+.single-post-edit-btn:active {
     opacity: 30%;
     cursor: pointer;
 }
