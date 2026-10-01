@@ -137,6 +137,12 @@ footer {
 }
 
 /* --- SINGLE POST PAGE --- */
+.single-post-title-container {
+    display: flex;
+    margin-top: 40px;
+    padding-left: 20px;;
+}
+
 .single-post-container {
     display: flex;
     flex-direction: column;
@@ -147,6 +153,7 @@ footer {
     border: var(--color-primary);
     border-radius: 25px;
     padding: 20px;
+    margin-top: 20px;
 }
 
 .single-post-author-container {
@@ -175,14 +182,26 @@ footer {
     object-fit: cover;
 }
 
-
-
-.single-created {
-}
-
 .single-post-author {
     font-weight: bold;
     font-size: 20px;
+}
+
+.edit-single-post-title {
+    border-radius: 15px;
+    border: none;
+    font-size: 20px;
+    margin-left: -20px;
+    padding: 10px;
+
+}
+
+.edit-single-post-body {
+    display: flex;
+    align-self: flex-start;
+    resize: none;
+    width: 550px;
+    height: 300px;
 }
 
 .comments-container {
