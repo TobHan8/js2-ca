@@ -25,20 +25,20 @@ export function searchPosts(query) {
     return get(ALL_POSTS_URL + '/search?q=' + query);
 }
 
-export function getProfile(id) {
-    return get(PROFILE_URL + id);
+export function getProfile(name) {
+    return get(PROFILE_URL + name);
 }
 
 export function getProfilePosts(name) {
     return get(PROFILE_POSTS_URL + name + '/posts')
 }
 
-export function followUser(id, status) {
+export function followUser(name, status) {
     if (status === 'follow') {
-        return put(PROFILE_URL + id + '/follow');
+        return put(PROFILE_URL + name + '/follow');
 
     } else if (status === 'unfollow') {
-        return put(PROFILE_URL + id + '/unfollow');
+        return put(PROFILE_URL + name + '/unfollow');
     }
 }
 

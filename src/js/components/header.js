@@ -1,5 +1,6 @@
 import { header } from '../constants.js';
 import { state, logOut } from '../state/manageState.js';
+import { readCurrentUser } from '../storage/store.js';
 
 export function displayHeader() {
 
@@ -115,7 +116,7 @@ export function displayHeader() {
         registerBtn.style.display = 'none';
 
         const profileButton = document.createElement('a');
-        profileButton.href = '/#/profile';
+        profileButton.href = `#/profile?name=${state.currentUser.name}`;
         profileButton.ariaLabel = 'Click to view profile';
         profileButton.classList.add('header-profile-btn');
         buttonsRight.appendChild(profileButton);
@@ -125,7 +126,7 @@ export function displayHeader() {
         profileButton.appendChild(profileIcon2);
 
         const profileLink = document.createElement('a');
-        profileLink.href = '/#/profile';
+        profileLink.href = `#/profile?name=${state.currentUser.name}`;
         profileLink.textContent = 'VIEW PROFILE';
         profileLink.ariaLabel = 'Click to view profile';
         profileLink.classList.add('nav-buttons');

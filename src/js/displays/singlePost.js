@@ -33,7 +33,7 @@ export async function initSinglePost() {
     `<p id="single-post-body" class="single-post-body">${post.body}</p>
     <div id="single-post-author-container" class="single-post-author-container">
         <span id="single-created" class="single-created">Created: ${post.created.slice(0, 10)}</span>
-        <a id="single-post-avatar-container" class="single-post-avatar-container">
+        <a id="single-post-avatar-container" class="single-post-avatar-container" href="#/profile?name=${post.author.name}">
             <img id="single-post-avatar" class="single-post-avatar">
         </a>
         <span id="single-post-author" class="single-post-author">${post.author.name}</span>

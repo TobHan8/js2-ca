@@ -148,10 +148,12 @@
     align-self: center;
 }
 
-/* --- SINGLE POST BUTTONS --- */
+/* --- SINGLE POST AND PROFILE BUTTONS --- */
 .single-post-edit-btn,
 .single-post-del-btn,
-.single-post-update-btn {
+.single-post-update-btn,
+.follow-btn,
+.unfollow-btn {
     padding: 10px 18px;
     border: none;
     border-radius: 25px;
@@ -160,20 +162,21 @@
 }
 
 .single-post-edit-btn,
-.single-post-update-btn {
+.single-post-update-btn,
+.follow-btn {
     background-color: var(--color-primary);
     color: var(--color-white);
 }
 
-.single-post-del-btn {
+.single-post-del-btn,
+.unfollow-btn {
     background-color: var(--color-red);
     color: var(--color-white);
 }
 
-.single-post-update-btn {
+.single-post-save-btn {
     align-self: flex-start;
 }
-
 
 /* --- ALL HOVER EFFECTS WHEN SUPPORTED --- */
 @media (hover: hover) {
@@ -193,7 +196,9 @@
     .single-post-avatar-container:hover,
     .single-post-del-btn:hover,
     .single-post-edit-btn:hover,
-    .single-post-update-btn:hover {
+    .single-post-update-btn:hover,
+    .follow-btn:hover,
+    .unfollow-btn:hover {
         opacity: 30%;
         cursor: pointer;
     }
@@ -217,7 +222,9 @@ nav a:active,
 .single-post-avatar-container:active,
 .single-post-del-btn:active,
 .single-post-edit-btn:active,
-.single-post-update-btn:active {
+.single-post-update-btn:active,
+.follow-btn:active,
+.unfollow-btn:active {
     opacity: 30%;
     cursor: pointer;
 }
