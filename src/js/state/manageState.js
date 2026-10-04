@@ -51,6 +51,12 @@ export async function logIn(userInput) {
     }
 }
 
+/**
+ * Logs out a user from the application.
+ * When called, the accessToken and currentuser entries are deleted from localStorage.
+ * Then the application state object is set back to default values.
+ * At the end the header component is rerendered to rehydrate with the updated state and the router navigates to the login route.
+ */
 export function logOut() {
     deleteToken();
     deleteCurrentUser();
