@@ -1,6 +1,7 @@
 import { Router } from '../routing/router.js';
 import { state } from '../state/manageState.js';
-import { getAllPosts, getSinglePost, createPost, updatePost, deletePost, searchPosts, getProfile, followUser } from '../services/socialService.js';
+import { getAllPosts, createPost, searchPosts } from '../services/socialService.js';
+import { debounce } from '../utils/utils.js';
 
 export function displayIndex() {
     if (state.isLoggedIn) {
@@ -18,6 +19,10 @@ export function displayIndex() {
 
         <div id="title-container" class="title-container">
             <h1>POST FEED</h1>
+        </div>
+
+        <div class="search-container">
+            <input id="search-bar" class="search-bar" type="text" placeholder="Search all posts...">
         </div>
 
         <div id="index-container" class="index-container"></div>
@@ -75,6 +80,8 @@ export async function initIndex() {
             return
         }
     });
+
+    search();
 }
 
 function renderPosts(post, container) {
@@ -131,4 +138,43 @@ async function loadPosts(page) {
     } finally {
         isFetching = false;
     }
+}
+
+async function search() {
+
+    const searchBar = document.getElementById('search-bar');
+
+    const debounceSearch = debounce(async (query) => {
+        const container = document.getElementById('index-container');
+        const loadBtn = document.getElementById('load-more-btn');
+
+        if (query.trim() === '') {
+            container.innerHTML = '';
+            currentPage = 1;
+            loadBtn.style.display = 'flex';
+            await loadPosts(currentPage);
+            return;
+        }
+
+        try {
+            const response = await searchPosts(query);
+            container.innerHTML = '';
+            loadBtn.style.display = 'none';
+            response.data.forEach(post => renderPosts(post, container));
+
+            if (response.data.length === 0) {
+                container.innerHTML = `
+                <span class="no-search">No posts matches the search "${query}". Please try again</span>
+                `
+            }
+
+        } catch (error) {
+            console.log('Failed to retrieve search', error); //Change to displayToast later 
+        }
+
+    }, 500);
+
+    searchBar.addEventListener('input', (event) => {
+            debounceSearch(event.target.value);
+        });
 }

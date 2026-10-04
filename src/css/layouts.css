@@ -72,6 +72,25 @@ footer {
     border-color: var(--color-primary);
 }
 
+.search-container {
+    display: flex;
+    justify-content: center;
+}
+
+.search-bar {
+    font-size: 15px;
+    padding: 10px;
+    border-radius: 10px;
+    border-color: var(--color-primary);
+    margin: 20px;
+}
+
+.no-search {
+    font-weight: bold;
+    color: var(--color-primary);
+    align-self: center;
+}
+
 .index-post-container {
     position: relative;
     border: solid 2px var(--color-primary);
