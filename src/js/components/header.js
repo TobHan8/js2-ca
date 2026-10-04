@@ -66,7 +66,7 @@ export function displayHeader() {
     registerBtn.classList.add('header-register-btn');
     registerBtn.href = '/#/register';
     registerBtn.ariaLabel = 'Go to register page';
-    registerBtn.text = 'REGISTER';
+    registerBtn.textContent = 'REGISTER';
     buttonsRight.appendChild(registerBtn);
 
     const dropdownNav = document.createElement('nav');
