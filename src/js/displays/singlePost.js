@@ -113,10 +113,18 @@ function renderEdit(post) {
         singlePostBody.replaceWith(editPostBody);
 
         document.getElementById('single-post-save-btn').addEventListener('click', async () => {
+            const newTitle = document.getElementById('edit-single-post-title').value;
             const newBody = document.getElementById('edit-single-post-body').value;
-            await updatePost(post.id, { title: post.title, body: newBody});
+            await updatePost(post.id, { title: newTitle, body: newBody});
             editing = false;
+            post.title = newTitle;
             post.body = newBody;
+
+            const titleInput = document.getElementById('edit-single-post-title');
+            const h1 = document.createElement('h1');
+            h1.id = 'single-post-title';
+            h1.textContent = newTitle;
+            titleInput.replaceWith(h1);
             
             const textarea = document.getElementById('edit-single-post-body');
             const p = document.createElement('p');
