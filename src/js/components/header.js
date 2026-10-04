@@ -40,13 +40,13 @@ export function displayHeader() {
     headerNav.appendChild(headerLogoContainer);
 
     const headerLogo = document.createElement('a');
-    headerLogo.href = '/';
+    headerLogo.href = '#/';
     headerLogo.ariaLabel = 'Return to home page'
     headerLogo.classList.add('header-logo');
     headerLogoContainer.appendChild(headerLogo);
 
     const logoImg = document.createElement('img');
-    logoImg.src = '/assets/images/logo.png';
+    logoImg.src = 'assets/images/logo.png';
     logoImg.alt = 'Cackle clickable logo';
     logoImg.classList.add('header-logo-img');
     headerLogo.appendChild(logoImg);
@@ -74,7 +74,7 @@ export function displayHeader() {
     header.appendChild(dropdownNav);
 
     const homeLink = document.createElement('a');
-    homeLink.href = '/';
+    homeLink.href = '#/';
     homeLink.textContent = 'HOME';
     homeLink.ariaLabel = 'Go to home page';
     homeLink.classList.add('nav-buttons');
@@ -136,7 +136,7 @@ export function displayHeader() {
         profileLink.appendChild(profileIcon);
 
         const createBtn = document.createElement('a');
-        createBtn.href = '/';
+        createBtn.href = '#/';
         createBtn.classList.add('header-create-btn');
         createBtn.ariaLabel = 'Create new post';
         buttonsRight.appendChild(createBtn);
@@ -146,7 +146,7 @@ export function displayHeader() {
         createBtn.appendChild(createIcon);
 
         const createBtn2 = document.createElement('a');
-        createBtn2.href = '/';
+        createBtn2.href = '#/';
         createBtn2.textContent = 'CREATE POST';
         createBtn2.ariaLabel = 'Click to create new post';
         createBtn2.classList.add('header-create-button');
