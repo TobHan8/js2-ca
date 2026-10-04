@@ -1,20 +1,3 @@
-.publish-button {
-    padding: 12px 30px;
-    border: none;
-    border-radius: 25px;
-    background-color: var(--color-primary);
-    color: var(--color-white);
-    font-weight: bold;
-    font-size: 20px;
-}
-
-@media(hover: hover) {
-    .publish-button:hover {
-        opacity: 30%;
-        cursor: pointer;
-    }
-}
-
 /* --- HEADER --- */
 .header-buttons {
     display: flex;
@@ -135,6 +118,30 @@
     color: var(--color-white);
 }
 
+/* --- INDEX BUTTONS --- */
+.load-more-btn {
+    padding: 12px 30px;
+    border: none;
+    border-radius: 25px;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    font-weight: bold;
+    font-size: 15px;
+    width: fit-content;
+    justify-self: center;
+    margin: 40px;
+}
+
+.publish-button {
+    padding: 12px 30px;
+    border: none;
+    border-radius: 25px;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    font-weight: bold;
+    font-size: 20px;
+}
+
 /* --- SUBMIT REGISTER/LOGIN BUTTON --- */
 .submit-btn {
     padding: 12px 30px;
@@ -198,7 +205,9 @@
     .single-post-edit-btn:hover,
     .single-post-update-btn:hover,
     .follow-btn:hover,
-    .unfollow-btn:hover {
+    .unfollow-btn:hover,
+    .load-more-btn:hover,
+    .publish-button:hover {
         opacity: 30%;
         cursor: pointer;
     }
@@ -224,7 +233,9 @@ nav a:active,
 .single-post-edit-btn:active,
 .single-post-update-btn:active,
 .follow-btn:active,
-.unfollow-btn:active {
+.unfollow-btn:active,
+.load-more-btn:active,
+.publish-button:active {
     opacity: 30%;
     cursor: pointer;
 }

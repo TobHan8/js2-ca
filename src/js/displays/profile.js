@@ -24,6 +24,9 @@ export function displayProfile() {
             <div id="profile-posts-container" class="index-container"></div>
         `;
     } else {
+        setTimeout(() => {
+            Router.navigate('#/login');
+        });
         return `
             <div id="title-container" class="title-container">
                 <h1>Please log in to view profile</h1>
@@ -45,6 +48,11 @@ export async function initProfile() {
     if (profile.banner) {
         banner.src = `${profile.banner.url}`;
         banner.alt = `${profile.banner.alt}`;
+    }
+
+    if (banner.src === 'https://images.unsplash.com/photo-1579547945413-497e1b99dac0?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&q=80&h=500&w=1500') {
+        banner.src = '../../../assets/images/default_banner.png';
+        banner.alt = 'Cackle default banner';
     }
 
     const avatar = document.getElementById('profile-avatar');

@@ -1,8 +1,8 @@
 import { get, post, put, del } from './apiClient.js';
 import { ALL_POSTS_URL, SINGLE_POST_URL, PROFILE_URL, PROFILE_POSTS_URL } from '../constants.js';
 
-export function getAllPosts() {
-    return get(ALL_POSTS_URL);
+export function getAllPosts(page = 1, limit = 10) {
+    return get(ALL_POSTS_URL + `?page=${page}&limit=${limit}&_author=true`);
 }
 
 export function getSinglePost(id) {
