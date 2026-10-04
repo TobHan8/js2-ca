@@ -56,7 +56,7 @@ export function displayHeader() {
     headerNav.appendChild(buttonsRight);
 
     const loginBtn = document.createElement('a');
-    loginBtn.href = '/#/login';
+    loginBtn.href = '#/login';
     loginBtn.ariaLabel = 'Go to log in page';
     loginBtn.textContent = 'LOG IN';
     loginBtn.classList.add('header-login-btn');
@@ -64,7 +64,7 @@ export function displayHeader() {
 
     const registerBtn = document.createElement('a');
     registerBtn.classList.add('header-register-btn');
-    registerBtn.href = '/#/register';
+    registerBtn.href = '#/register';
     registerBtn.ariaLabel = 'Go to register page';
     registerBtn.textContent = 'REGISTER';
     buttonsRight.appendChild(registerBtn);
@@ -87,7 +87,7 @@ export function displayHeader() {
     if (!state.isLoggedIn) {
 
         const logInLink = document.createElement('a');
-        logInLink.href = '/#/login';
+        logInLink.href = '#/login';
         logInLink.ariaLabel = 'Go to log in page';
         logInLink.textContent = 'LOG IN';
         logInLink.classList.add('nav-buttons');
@@ -98,7 +98,7 @@ export function displayHeader() {
         logInLink.appendChild(logInIcon);
 
         const registerLink = document.createElement('a');
-        registerLink.href = '/#/register';
+        registerLink.href = '#/register';
         registerLink.ariaLabel = 'Go to register page';
         registerLink.textContent = 'REGISTER';
         registerLink.classList.add('nav-buttons');
