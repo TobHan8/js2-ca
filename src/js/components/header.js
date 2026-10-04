@@ -1,6 +1,5 @@
 import { header } from '../constants.js';
 import { state, logOut } from '../state/manageState.js';
-import { readCurrentUser } from '../storage/store.js';
 
 export function displayHeader() {
 
@@ -47,7 +46,7 @@ export function displayHeader() {
     headerLogoContainer.appendChild(headerLogo);
 
     const logoImg = document.createElement('img');
-    logoImg.src = '../../assets/images/logo.png';
+    logoImg.src = '/assets/images/logo.png';
     logoImg.alt = 'Cackle clickable logo';
     logoImg.classList.add('header-logo-img');
     headerLogo.appendChild(logoImg);

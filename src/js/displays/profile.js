@@ -51,7 +51,7 @@ export async function initProfile() {
     }
 
     if (banner.src === 'https://images.unsplash.com/photo-1579547945413-497e1b99dac0?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&q=80&h=500&w=1500') {
-        banner.src = '../../../assets/images/default_banner.png';
+        banner.src = '/assets/images/default_banner.png';
         banner.alt = 'Cackle default banner';
     }
 
@@ -63,7 +63,7 @@ export async function initProfile() {
     }
     
     if(avatar.src === 'https://images.unsplash.com/photo-1579547945413-497e1b99dac0?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&q=80&h=400&w=400') {
-        avatar.src = '../../../assets/images/default_avatar.png';
+        avatar.src = '/assets/images/default_avatar.png';
         avatar.alt = 'Cackle default avatar';
     }
 
