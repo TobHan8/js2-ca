@@ -1,7 +1,7 @@
 import { Router } from '../routing/router.js';
 import { state } from '../state/manageState.js';
 import { getAllPosts, createPost, searchPosts } from '../services/socialService.js';
-import { debounce } from '../utils/utils.js';
+import { debounce } from '../utils/debounce.js';
 
 export function displayIndex() {
     if (state.isLoggedIn) {
@@ -67,17 +67,19 @@ export async function initIndex() {
         const formData = new FormData(event.target);
         const formObject = Object.fromEntries(formData);
 
-        const apiReq = await createPost(formObject);
+        try {
+            await createPost(formObject);
+            console.log('Post created successfully');
 
-        if (apiReq) {
-            console.log('Post created successfully!'); //Change to displayToast later
-
-            setTimeout(() => {
-                Router.navigate('/');
-            }, 2000);
-
-        } else {
-            return
+            event.target.reset();
+            
+            const container = document.getElementById('index-container');
+            container.innerHTML = '';
+            currentPage = 1;
+            document.getElementById('load-more-btn').style.display = 'flex';
+            await loadPosts(currentPage);
+        } catch (error) {
+            console.log('Failed to create post', error)
         }
     });
 
