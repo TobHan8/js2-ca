@@ -1,0 +1,16 @@
+// This is not a normal variables file that interacts with CSS on root level, this is a SASS variables file
+// The purpose of this file is to override defined variables in the Bootstrap package
+// Therefore variables here must have a matching one in the Bootstrap package
+
+/* --- MAIN COLORS --- */
+$primary: #2E7AFF;
+$secondary: #98B9E5;
+$white: #FFFFFF;
+$red: #FF0000;
+
+/* --- FONT STACK --- */
+$font-family-base: 'Huninn', sans-serif;
+
+/* --- ELEMENT SPECIFIC --- */
+$body-bg: $secondary;
+$link-decoration: none;
