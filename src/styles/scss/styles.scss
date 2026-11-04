@@ -3,13 +3,13 @@
 
 @use "variables" as *;
 @use "../../../node_modules/bootstrap/scss/bootstrap.scss" as * with (
-$primary: $primary;
-$secondary: $secondary;
-$white: $white;
-$red: $red;
-$font-family-base: $font-family-base;
-$body-bg: $body-bg;
-$link-decoration: $link-decoration;
+$primary: $primary,
+$secondary: $secondary,
+$white: $white,
+$red: $red,
+$font-family-base: $font-family-base,
+$body-bg: $body-bg,
+$link-decoration: $link-decoration,
 );
 
 @use "mixins";

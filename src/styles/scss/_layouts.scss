@@ -1,3 +1,352 @@
+@use "variables" as *;
+
 header, footer {
-    background-color:  $primary;
+    background-color: $primary;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    background-color: $secondary;
+}
+
+header {
+    z-index: 10;
+    display: flex;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: 100px;
+}
+
+main {
+    flex: 1;
+    position: relative;
+    z-index: 2;
+    margin: auto;
+    min-height: 100vh;
+}
+
+.title-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+/* --- INDEX PAGE --- */
+.index-container {
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 800px;
+    gap: 40px;
+}
+
+.create-post-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    width: 800px;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+.create-post-title {
+    align-self: flex-start;
+    width: 300px;
+    padding: 15px;
+    font-size: 20px;
+    border-radius: 15px;
+    border-color: $primary;
+}
+
+.post-input {
+    width: 800px;
+    height: 160px;
+    resize: none;
+    font-size: 20px;
+    padding: 20px;
+    border-radius: 25px;
+    border-color: $primary;
+}
+
+.search-container {
+    display: flex;
+    justify-content: center;
+}
+
+.search-bar {
+    font-size: 15px;
+    padding: 10px;
+    border-radius: 10px;
+    border-color: $primary;
+    margin: 20px;
+}
+
+.no-search {
+    font-weight: bold;
+    color: $primary;
+    align-self: center;
+}
+
+.index-post-container {
+    position: relative;
+    border: solid 2px $primary;
+    width: 800px;
+    padding: 20px;
+    border-radius: 25px;
+    background-color: $white;
+}
+
+@media(hover: hover) {
+    .index-post-container:hover {
+        background-color: $primary;
+    }
+}
+
+.index-created {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.load-btn-container {
+    display: flex;
+    width: 800px;
+
+    justify-content: center;
+}
+
+/* --- REGISTER & LOGIN PAGE --- */
+.register-container,
+.login-container {
+    width: 400px;
+    margin: 60px;
+    align-items: center;
+}
+
+.register-form,
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.register-form label,
+.login-form label {
+    color: $primary;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: -15px;
+}
+
+.register-form input,
+.login-form input {
+    font-size: 15px;
+    padding: 10px;
+    border-radius: 10px;
+    border-color: $primary;
+}
+
+.register-link,
+.login-link {
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+}
+
+.register-link span,
+.login-link span {
+    color: $primary;
+}
+
+/* --- SINGLE POST PAGE --- */
+.single-post-title-container {
+    display: flex;
+    margin-top: 40px;
+    padding-left: 20px;;
+}
+
+.single-post-container {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 800px;
+    min-height: 300px;
+    background-color: $white;
+    border: $primary;
+    border-radius: 25px;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.single-post-author-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    gap: 20px;
+}
+
+.single-post-avatar-container {
+    display: flex;
+    overflow: hidden;
+    border-radius: 50px;
+    height: 100px;
+    width: 100px;
+    transition: 0.3s ease;
+}
+
+.single-post-avatar-container img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.single-post-author {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.edit-single-post-title {
+    border-radius: 15px;
+    border: none;
+    font-size: 20px;
+    margin-left: -20px;
+    padding: 10px;
+
+}
+
+.edit-single-post-body {
+    display: flex;
+    align-self: flex-start;
+    resize: none;
+    width: 550px;
+    height: 300px;
+}
+
+.comments-container {
+    display: flex;
+    flex-direction: column;
+    width: 800px;
+    border: $primary;
+    border-radius: 25px;
+    gap: 40px;
+
+}
+
+.comment-container {
+    background-color: $white;
+    border: solid $primary;
+    width: 800px;
+    border-radius: 25px;
+    padding: 20px;
+}
+
+.no-comments {
+    color: $primary;
+    font-weight: bold;
+    text-align: center;
+}
+
+.single-post-btns-container {
+    position: absolute;
+    display: flex;
+    bottom: 20px;
+    right: 20px;
+    gap: 10px;
+}
+
+/* --- PROFILE PAGE --- */
+.profile-container {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 800px;
+    min-height: 300px;
+    background-color: $white;
+    border: $primary;
+    border-radius: 25px;
+    padding: 20px;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+.profile-banner-container {
+    position: relative;
+    display: flex;
+    width: 760px;
+    overflow: hidden;
+    border-radius: 25px;
+    height: 200px;
+}
+
+.profile-banner-container img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile-avatar-container {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    display: flex;
+    overflow: hidden;
+    border-radius: 25px;
+    height: 125px;
+    width: 125px;
+    border: solid 4px $white;
+}
+
+.profile-avatar-container img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+}
+
+.profile-title-container {
+    position: absolute;
+    left: 180px;
+    top: 77px;
+    background-color: $primary;
+    padding: 10px;
+    border-radius: 25px;
+    border: solid 4px $white;
+
+}
+
+.profile-title-container h1 {
+    font-size: 35px;
+    color: $white;
+    font-weight: bold;
+    margin: 0;
+}
+
+.profile-bot-container {
+    display: flex;
+    flex-direction: row;
+    padding: 20px;
+}
+
+.profile-count-container {
+    display: flex;
+    width: 100%;
+    gap: 20px;
+}
+
+.profile-btns-container {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
 }
