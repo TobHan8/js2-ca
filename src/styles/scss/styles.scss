@@ -1,6 +1,18 @@
-@import "variables";
-@import "../../../node_modules/bootstrap/scss/bootstrap.scss";
-@import "mixins";
-@import "typography";
-@import "components";
-@import "layouts";
+// This file is used for compiling Bootstrap and SASS into CSS.
+// Variables named here must be predefined in Bootstrap, the values are passed from _variables.scss and can be named anything.
+
+@use "variables" as *;
+@use "../../../node_modules/bootstrap/scss/bootstrap.scss" as * with (
+$primary: $primary;
+$secondary: $secondary;
+$white: $white;
+$red: $red;
+$font-family-base: $font-family-base;
+$body-bg: $body-bg;
+$link-decoration: $link-decoration;
+);
+
+@use "mixins";
+@use "typography";
+@use "components";
+@use "layouts";

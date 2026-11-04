@@ -1,6 +1,6 @@
 // This is not a normal variables file that interacts with CSS on root level, this is a SASS variables file
-// The purpose of this file is to override defined variables in the Bootstrap package
-// Therefore variables here must have a matching one in the Bootstrap package
+// The purpose of this file is to pass values to styles.scss by @use as, with and *. These values can be used to override Bootstrap variables.
+// Variables written in _variables.scss can be named anything, as they are only passed as values for predefined Bootstrap variables in styles.scss.
 
 /* --- MAIN COLORS --- */
 $primary: #2E7AFF;
@@ -14,3 +14,4 @@ $font-family-base: 'Huninn', sans-serif;
 /* --- ELEMENT SPECIFIC --- */
 $body-bg: $secondary;
 $link-decoration: none;
+$headings-color: $primary;
