@@ -6,10 +6,11 @@ import { Router } from '../routing/router.js';
 export function displaySinglePost() {
     if (state.isLoggedIn) {
         return `
-            <div id="single-post-title-container" class="single-post-title-container"></div>
-            <div id="single-post-container" class="single-post-container"></div>
+            <div id="single-post-title-container" class="d-flex justify-content-center my-5 text-break"></div>
+            <div id="single-post-container" class="single-post-container d-flex flex-row position-relative text-break bg-white p-4"></div>
+
             <div id="title-container" class="d-flex justify-content-center my-5">
-                <h2>COMMENTS<H2>
+                <h2>COMMENTS</h2>
             </div>
         `
     } else {
@@ -28,19 +29,23 @@ export async function initSinglePost() {
     const response = await getSinglePost(id);
     const post = response.data;
 
-    document.getElementById('single-post-title-container').innerHTML = `<h1 id="single-post-title">${post.title}<h1>`;
+    document.getElementById('single-post-title-container').innerHTML = `<h1 id="single-post-title">${post.title}</h1>`;
     document.getElementById('single-post-container').innerHTML = 
-    `<p id="single-post-body" class="single-post-body">${post.body}</p>
+    `
+    <div id="single-post-left" class="single-post-left text-break">
+        <p id="single-post-body" class="single-post-body">${post.body}</p>
+    </div>
     <div id="single-post-author-container" class="single-post-author-container">
         <span id="single-created" class="single-created">Created: ${post.created.slice(0, 10)}</span>
         <a id="single-post-avatar-container" class="single-post-avatar-container" href="#/profile?name=${post.author.name}">
             <img id="single-post-avatar" class="single-post-avatar">
         </a>
         <span id="single-post-author" class="single-post-author">${post.author.name}</span>
-        <span id="single-updated" class="single-updated"<span>
+        <span id="single-updated" class="single-updated"</span>
+        <div id="single-post-btns-container" class="single-post-btns-container">
+        </div>
     </div>
-    <div id="single-post-btns-container" class="single-post-btns-container">
-    </div>
+
     `;
 
 

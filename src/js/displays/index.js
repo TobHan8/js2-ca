@@ -13,7 +13,7 @@ export function displayIndex() {
 
         <form id="create-post-form" name="create-post-form" class="create-post-form d-flex flex-column gap-3 mt-3 mb-5">
             <input id="title" name="title" class="create-post-title form-control form-control-lg" type="text" maxlength="30" minlength="3" placeholder="Choose a title for your post"></input>
-            <textarea id="body" name="body" class="post-input form-control form-control-lg" maxlength="300" placeholder="What are we cackling about today...?"></textarea>
+            <textarea id="body" name="body" class="post-input form-control form-control-lg" maxlength="280" placeholder="What are we cackling about today...?"></textarea>
             <button id="publish-button" class="publish-button align-self-center mb-5">PUBLISH POST</button>
         </form>
 
@@ -99,10 +99,20 @@ function renderPosts(post, container) {
     indexPostTitle.textContent = `${post.title}`;
     indexPostContainer.appendChild(indexPostTitle);
 
-    const indexPostBody = document.createElement('p');
-    indexPostBody.classList.add('index-post-body');
-    indexPostBody.textContent = `${post.body}`;
-    indexPostContainer.appendChild(indexPostBody);
+    const body = post.body;
+    if (body.length > 80) {
+       const slicedBody = body.slice(0, 80) + '...';
+       const indexPostBody = document.createElement('p');
+        indexPostBody.classList.add('index-post-body', 'text-break');
+        indexPostBody.textContent = slicedBody;
+        indexPostContainer.appendChild(indexPostBody);
+
+    } else {
+        const indexPostBody = document.createElement('p');
+        indexPostBody.classList.add('index-post-body');
+        indexPostBody.textContent = `${post.body}`;
+        indexPostContainer.appendChild(indexPostBody);
+    }
 
     const indexCreated = document.createElement('span');
     indexCreated.classList.add('index-created');
