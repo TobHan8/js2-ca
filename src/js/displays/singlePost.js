@@ -7,7 +7,7 @@ export function displaySinglePost() {
     if (state.isLoggedIn) {
         return `
             <div id="single-post-title-container" class="d-flex justify-content-center my-5 text-break"></div>
-            <div id="single-post-container" class="single-post-container d-flex flex-row position-relative text-break bg-white p-4"></div>
+            <div id="single-post-container" class="single-post-container d-flex flex-column flex-md-row position-relative bg-white p-4"></div>
 
             <div id="title-container" class="d-flex justify-content-center my-5">
                 <h2>COMMENTS</h2>
@@ -32,7 +32,7 @@ export async function initSinglePost() {
     document.getElementById('single-post-title-container').innerHTML = `<h1 id="single-post-title">${post.title}</h1>`;
     document.getElementById('single-post-container').innerHTML = 
     `
-    <div id="single-post-left" class="single-post-left text-break">
+    <div id="single-post-left" class="single-post-left flex-grow-1 text-break">
         <p id="single-post-body" class="single-post-body">${post.body}</p>
     </div>
     <div id="single-post-author-container" class="single-post-author-container">
@@ -40,8 +40,7 @@ export async function initSinglePost() {
         <a id="single-post-avatar-container" class="single-post-avatar-container" href="#/profile?name=${post.author.name}">
             <img id="single-post-avatar" class="single-post-avatar">
         </a>
-        <span id="single-post-author" class="single-post-author">${post.author.name}</span>
-        <span id="single-updated" class="single-updated"</span>
+        <span id="single-post-author" class="single-post-author justify-content-center">${post.author.name}</span>
         <div id="single-post-btns-container" class="single-post-btns-container">
         </div>
     </div>
@@ -63,14 +62,14 @@ export async function initSinglePost() {
     
 
     const commentsContainer = document.createElement('div');
-    commentsContainer.classList.add('comments-container');
+    commentsContainer.classList.add('comments-container', 'd-flex', 'flex-column', 'mb-5');
     mainContainer.appendChild(commentsContainer);
 
     if (post.comments && post.comments.length > 0) {
 
         post.comments.forEach(comment => {
             const commentContainer = document.createElement('div');
-            commentContainer.classList.add('comment-container');
+            commentContainer.classList.add('comment-container', 'bg-white', );
             commentsContainer.appendChild(commentContainer);
 
             const commentText = document.createElement('p');
@@ -81,7 +80,7 @@ export async function initSinglePost() {
     } else {
         
         const noComments = document.createElement('span');
-        noComments.classList.add('no-comments');
+        noComments.classList.add('no-comments', 'd-flex', 'justify-content-center', 'fw-bold');
         noComments.textContent = 'This post has no comments yet...';
         commentsContainer.appendChild(noComments);
     }
@@ -113,7 +112,7 @@ function renderEdit(post) {
 
         const editPostBody = document.createElement('textarea');
         editPostBody.id = 'edit-single-post-body';
-        editPostBody.classList.add('edit-single-post-body');
+        editPostBody.classList.add('edit-single-post-body', 'form-control');
         editPostBody.value = post.body;
         singlePostBody.replaceWith(editPostBody);
 

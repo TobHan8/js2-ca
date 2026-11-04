@@ -12230,6 +12230,7 @@ footer {
   flex-direction: column;
   align-items: center;
   gap: 20px;
+  min-width: 150px;
 }
 
 .single-post-avatar-container {
@@ -12262,34 +12263,26 @@ footer {
 }
 
 .edit-single-post-body {
-  display: flex;
-  align-self: flex-start;
   resize: none;
-  width: 550px;
   height: 300px;
 }
 
 .comments-container {
-  display: flex;
-  flex-direction: column;
-  width: 800px;
-  border: #2E7AFF;
+  max-width: 800px;
   border-radius: 25px;
   gap: 40px;
 }
 
 .comment-container {
-  background-color: #FFFFFF;
   border: solid #2E7AFF;
-  width: 800px;
+  max-width: 800px;
   border-radius: 25px;
   padding: 20px;
 }
 
 .no-comments {
   color: #2E7AFF;
-  font-weight: bold;
-  text-align: center;
+  max-width: 800px;
 }
 
 .single-post-btns-container {
@@ -12300,6 +12293,13 @@ footer {
   gap: 10px;
 }
 
+@media (max-width: 768px) {
+  .single-post-btns-container {
+    position: unset;
+    bottom: unset;
+    right: unset;
+  }
+}
 /* --- PROFILE PAGE --- */
 .profile-container {
   display: flex;
