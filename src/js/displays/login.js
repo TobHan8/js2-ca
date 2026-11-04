@@ -7,14 +7,14 @@ export function displayLogin() {
     if (state.isLoggedIn) { // This will never display in reality, but makes the form inaccessible if isLoggedIn: true
         return `
 
-        <div id="title-container" class="title-container">
+        <div id="title-container" class="class="d-flex justify-content-center my-5">
             <h1>You are already logged in!</h1>
         </div>
         `
     } else {
         return `
 
-        <div id="title-container" class="title-container">
+        <div id="title-container" class="d-flex justify-content-center my-5">
             <h1>Log in to your account</h1>
         </div>
 

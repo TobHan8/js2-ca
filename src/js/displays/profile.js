@@ -28,7 +28,7 @@ export function displayProfile() {
             Router.navigate('#/login');
         });
         return `
-            <div id="title-container" class="title-container">
+            <div id="title-container" class="d-flex justify-content-center my-5">
                 <h1>Please log in to view profile</h1>
             </div>
         `;

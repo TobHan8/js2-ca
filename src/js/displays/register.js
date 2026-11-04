@@ -5,14 +5,14 @@ export function displayRegister() {
 
     if (state.isLoggedIn) { // This will never display in reality, but makes the form inaccessible if isLoggedIn: true
         return `
-    <div id="title-container" class="title-container"> 
+    <div id="title-container" class="d-flex justify-content-center my-5"> 
         <h1>Register new account</h1>
     </div>
     `
     } else {
     
         return `
-        <div id="title-container" class="title-container">
+        <div id="title-container" class="d-flex justify-content-center my-5">
             <h1>Register new account</h1>
         </div>
 

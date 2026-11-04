@@ -3,3 +3,21 @@
 h1, h2 {
     color: $primary;
 }
+
+.index-post-title {
+    font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+}
+
+.index-post-body {
+    font-size: clamp(0.75rem, 1.5vw, 1.2rem);
+}
+
+.index-created {
+    font-size: clamp(0.75rem, 1.5vw, 1.2rem);
+}
+
+@media (max-width: 540px) {
+    .index-created {
+        display: none;
+    }
+}

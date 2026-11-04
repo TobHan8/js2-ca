@@ -15,3 +15,6 @@ $font-family-base: 'Huninn', sans-serif;
 $body-bg: $secondary;
 $link-decoration: none;
 $headings-color: $primary;
+$input-bg: $white;
+$container-max-widths: (sm: 540px, md: 720px, lg: 800px, xl: 800px, xxl: 800px);
+$input-font-size-lg: clamp(15px, 2.5vw, 20px);

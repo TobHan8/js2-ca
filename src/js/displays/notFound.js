@@ -2,7 +2,9 @@ import { Router } from '../routing/router.js';
 
 export function displayNotFound() {
     return `
-        <h1>Page not found! Sorry, this page does not exist</h1>
+        <div id="title-container" class="d-flex justify-content-center my-5">
+            <h1>Page not found! Sorry, this page does not exist</h1>
+        </div>
     `
 }
 

@@ -1,0 +1,11 @@
+@use "variables" as *;
+
+@mixin pill-button($font-size: 15px, $bg: $primary) {
+    padding: 12px 30px;
+    border: none;
+    border-radius: 25px;
+    background-color: $bg;
+    color: $white;
+    font-weight: bold;
+    font-size: $font-size;
+}

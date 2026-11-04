@@ -7,25 +7,26 @@ export function displayIndex() {
     if (state.isLoggedIn) {
         return `
 
-        <div id="title-container" class="title-container">
+        <div id="title-container" class="d-flex justify-content-center my-5">
             <h1>CREATE NEW POST</h1>
         </div>
 
-        <form id="create-post-form" name="create-post-form" class="create-post-form">
-            <input id="title" name="title" class="create-post-title" type="text" maxlength="30" minlength="3" placeholder="Choose a title for your post"></input>
-            <textarea id="body" name="body" class="post-input" maxlength="300" placeholder="What are we cackling about today...?"></textarea>
-            <button id="publish-button" class="publish-button">PUBLISH POST</button>
+        <form id="create-post-form" name="create-post-form" class="create-post-form d-flex flex-column gap-3 mt-3 mb-5">
+            <input id="title" name="title" class="create-post-title form-control form-control-lg" type="text" maxlength="30" minlength="3" placeholder="Choose a title for your post"></input>
+            <textarea id="body" name="body" class="post-input form-control form-control-lg" maxlength="300" placeholder="What are we cackling about today...?"></textarea>
+            <button id="publish-button" class="publish-button align-self-center mb-5">PUBLISH POST</button>
         </form>
 
-        <div id="title-container" class="title-container">
+        <div id="title-container" class="d-flex justify-content-center mt-5 mb-1">
             <h1>POST FEED</h1>
         </div>
 
-        <div class="search-container">
+        <div class="container d-flex flex-row justify-content-center">
+            <i class="fa-solid fa-magnifying-glass align-self-center text-primary fs-3"></i>
             <input id="search-bar" class="search-bar" type="text" placeholder="Search all posts...">
         </div>
 
-        <div id="index-container" class="index-container"></div>
+        <div id="index-container" class="d-flex flex-column gap-5"></div>
         
         <div class="load-btn-container">
             <button id="load-more-btn" class="load-more-btn">LOAD MORE</button>
@@ -34,7 +35,7 @@ export function displayIndex() {
         `
     } else {
         return `
-        <div id="title-container" class="title-container">
+        <div id="title-container" class="d-flex justify-content-center my-5">
             <h1>Please log in to view post feed</h1>
         </div>
         `

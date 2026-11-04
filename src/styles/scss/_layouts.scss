@@ -1,77 +1,22 @@
 @use "variables" as *;
 
-header, footer {
-    background-color: $primary;
-}
-
-body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    margin: 0;
-    background-color: $secondary;
-}
-
 header {
-    z-index: 10;
-    display: flex;
-    position: sticky;
-    top: 0;
-    width: 100%;
     height: 100px;
 }
-
-main {
-    flex: 1;
-    position: relative;
-    z-index: 2;
-    margin: auto;
-    min-height: 100vh;
-}
-
-.title-container {
-    display: flex;
-    justify-content: center;
-    margin-top: 40px;
+footer {
+    height: 60px;
 }
 
 /* --- INDEX PAGE --- */
-.index-container {
-    z-index: 2;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    width: 800px;
-    gap: 40px;
-}
-
-.create-post-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-    width: 800px;
-    margin-top: 20px;
-    margin-bottom: 40px;
-}
-
 .create-post-title {
-    align-self: flex-start;
-    width: 300px;
-    padding: 15px;
-    font-size: 20px;
+    max-width: 300px;
     border-radius: 15px;
-    border-color: $primary;
 }
 
 .post-input {
-    width: 800px;
     height: 160px;
     resize: none;
-    font-size: 20px;
-    padding: 20px;
     border-radius: 25px;
-    border-color: $primary;
 }
 
 .search-container {
@@ -96,7 +41,7 @@ main {
 .index-post-container {
     position: relative;
     border: solid 2px $primary;
-    width: 800px;
+    max-width: 800px;
     padding: 20px;
     border-radius: 25px;
     background-color: $white;
@@ -116,7 +61,7 @@ main {
 
 .load-btn-container {
     display: flex;
-    width: 800px;
+    max-width: 800px;
 
     justify-content: center;
 }
@@ -124,7 +69,7 @@ main {
 /* --- REGISTER & LOGIN PAGE --- */
 .register-container,
 .login-container {
-    width: 400px;
+    max-width: 400px;
     margin: 60px;
     align-items: center;
 }

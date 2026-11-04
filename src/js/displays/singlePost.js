@@ -8,13 +8,13 @@ export function displaySinglePost() {
         return `
             <div id="single-post-title-container" class="single-post-title-container"></div>
             <div id="single-post-container" class="single-post-container"></div>
-            <div id="title-container" class="title-container">
+            <div id="title-container" class="d-flex justify-content-center my-5">
                 <h2>COMMENTS<H2>
             </div>
         `
     } else {
         return `
-            <div id="title-container" class="title-container">
+            <div id="title-container" class="d-flex justify-content-center my-5">
                 <h1>Please log in to view post</h1>
             </div>
         `
