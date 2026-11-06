@@ -2097,7 +2097,7 @@ progress {
 .col-form-label-lg {
   padding-top: calc(0.5rem + var(--bs-border-width));
   padding-bottom: calc(0.5rem + var(--bs-border-width));
-  font-size: clamp(15px, 2.5vw, 20px);
+  font-size: clamp(15px, 2.5vw, 18px);
 }
 
 .col-form-label-sm {
@@ -2219,7 +2219,7 @@ progress {
 .form-control-lg {
   min-height: calc(1.5em + 1rem + calc(var(--bs-border-width) * 2));
   padding: 0.5rem 1rem;
-  font-size: clamp(15px, 2.5vw, 20px);
+  font-size: clamp(15px, 2.5vw, 18px);
   border-radius: var(--bs-border-radius-lg);
 }
 .form-control-lg::file-selector-button {
@@ -2314,7 +2314,7 @@ textarea.form-control-lg {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   padding-left: 1rem;
-  font-size: clamp(15px, 2.5vw, 20px);
+  font-size: clamp(15px, 2.5vw, 18px);
   border-radius: var(--bs-border-radius-lg);
 }
 
@@ -2669,7 +2669,7 @@ textarea.form-control-lg {
 .input-group-lg > .input-group-text,
 .input-group-lg > .btn {
   padding: 0.5rem 1rem;
-  font-size: clamp(15px, 2.5vw, 20px);
+  font-size: clamp(15px, 2.5vw, 18px);
   border-radius: var(--bs-border-radius-lg);
 }
 
@@ -11877,6 +11877,18 @@ h1, h2 {
     display: none;
   }
 }
+.register-form label,
+.login-form label {
+  color: #2E7AFF;
+  font-size: clamp(14px, 2.5vw, 18px);
+  margin-bottom: -15px;
+}
+
+.reg-log-link {
+  font-size: clamp(14px, 2.5vw, 16px);
+  margin: 20px;
+}
+
 /* --- HEADER --- */
 .header-buttons {
   display: flex;
@@ -12070,8 +12082,7 @@ h1, h2 {
   .header-logo:hover,
   .submit-btn:hover,
   .register-link:hover,
-  .login-link:hover,
-  .single-post-avatar-container:hover,
+  .reg-log-link:hover,
   .single-post-del-btn:hover,
   .single-post-edit-btn:hover,
   .single-post-update-btn:hover,
@@ -12095,8 +12106,7 @@ nav a:active,
 .close-btn:active,
 .header-logo:active,
 .submit-btn:active,
-.register-link:active,
-.login-link:active,
+.reg-log-link:active,
 .single-post-avatar-container:active,
 .single-post-del-btn:active,
 .single-post-edit-btn:active,
@@ -12175,46 +12185,8 @@ footer {
 }
 
 /* --- REGISTER & LOGIN PAGE --- */
-.register-container,
-.login-container {
+.reg-log-container {
   max-width: 400px;
-  margin: 60px;
-  align-items: center;
-}
-
-.register-form,
-.login-form {
-  display: flex;
-  flex-direction: column;
-  gap: 25px;
-}
-
-.register-form label,
-.login-form label {
-  color: #2E7AFF;
-  font-size: 18px;
-  font-weight: bold;
-  margin-bottom: -15px;
-}
-
-.register-form input,
-.login-form input {
-  font-size: 15px;
-  padding: 10px;
-  border-radius: 10px;
-  border-color: #2E7AFF;
-}
-
-.register-link,
-.login-link {
-  display: flex;
-  justify-content: center;
-  margin: 20px;
-}
-
-.register-link span,
-.login-link span {
-  color: #2E7AFF;
 }
 
 /* --- SINGLE POST PAGE --- */

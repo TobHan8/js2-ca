@@ -18,21 +18,21 @@ export function displayLogin() {
             <h1>Log in to your account</h1>
         </div>
 
-        <div id="login-container" class="login-container">
+        <div id="login-container" class="reg-log-container mx-auto">
 
-            <form id="login-form" name="login-form" class="login-form">
+            <form id="login-form" name="login-form" class="login-form d-flex flex-column gap-4">
 
-                <label for="email">Email (must end with @stud.noroff.no)</label>
-                <input id="email" name="email" type="email" placeholder="example@stud.noroff.no" maxlength="30" pattern="[\\w@.]+" required="true">
+                <label class="fw-bold" for="email">Email (must end with @stud.noroff.no)</label>
+                <input id="email" name="email" type="email" class="form-control form-control-lg" placeholder="example@stud.noroff.no" maxlength="30" pattern="[\\w@.]+" required="true">
 
-                <label for="password">Password</label>
-                <input id="password" name="password" type="password" placeholder="Choose a password" minlength="8" required="true">
+                <label class="fw-bold" for="password">Password</label>
+                <input id="password" class="form-control form-control-lg" name="password" type="password" placeholder="Enter your password" minlength="8" required="true">
 
                 <button id="submit-btn" class="submit-btn">LOG IN</button>
 
             </form>
 
-            <a id="register-link" class="register-link">
+            <a id="register-link" class="reg-log-link d-flex justify-content-center text-center">
                 <span>Don't have an account? Click here to register</span>
             </a>
 

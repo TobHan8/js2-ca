@@ -16,27 +16,27 @@ export function displayRegister() {
             <h1>Register new account</h1>
         </div>
 
-        <div id="register-container" class="register-container">
+        <div id="register-container" class="reg-log-container mx-auto">
 
-            <form id="register-form" name="register-form" class="register-form">
+            <form id="register-form" name="register-form" class="register-form d-flex flex-column gap-4">
 
-                <label for="name">Username</label>
-                <input id="name" name="name" type="text" placeholder="Select your username" maxlength="20" pattern="[\\w_]+" required="true">
+                <label class="fw-bold" for="name">Username</label>
+                <input id="name" class="form-control form-control-lg" name="name" type="text" placeholder="Select your username" maxlength="20" pattern="[\\w_]+" required="true">
 
-                <label for="email">Email (must end with @stud.noroff.no)</label>
-                <input id="email" name="email" type="email" placeholder="example@stud.noroff.no" maxlength="30" pattern="[\\w@.]+" required="true">
+                <label class="fw-bold" for="email">Email (must end with @stud.noroff.no)</label>
+                <input id="email" class="form-control form-control-lg" name="email" type="email" placeholder="example@stud.noroff.no" maxlength="30" pattern="[\\w@.]+" required="true">
 
-                <label for="password">Password</label>
-                <input id="password" name="password" type="password" placeholder="Choose a password" minlength="8" required="true">
+                <label class="fw-bold" for="password">Password</label>
+                <input id="password" class="form-control form-control-lg" name="password" type="password" placeholder="Choose a password" minlength="8" required="true">
 
-                <label for="password2">Confirm password</label>
-                <input id="password2" name="password2" type="password" placeholder="Repeat password" minlength="8" required="true">
+                <label class="fw-bold" for="password2">Confirm password</label>
+                <input id="password2" class="form-control form-control-lg" name="password2" type="password" placeholder="Repeat password" minlength="8" required="true">
 
                 <button id="submit-btn" class="submit-btn">REGISTER</button>
 
             </form>
 
-            <a id="login-link" class="login-link">
+            <a id="login-link" class="reg-log-link d-flex justify-content-center text-center">
                 <span>Already have an account? Click here to log in</span>
             </a>
 

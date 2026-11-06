@@ -55,7 +55,7 @@ export async function initSinglePost() {
 
     }
     
-    if(avatar.src === 'https://images.unsplash.com/photo-1579547945413-497e1b99dac0?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&q=80&h=400&w=400') {
+    if (avatar.src === 'https://images.unsplash.com/photo-1579547945413-497e1b99dac0?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&q=80&h=400&w=400') {
         avatar.src = 'assets/images/default_avatar.png';
         avatar.alt = 'Cackle default avatar';
     }
@@ -69,7 +69,7 @@ export async function initSinglePost() {
 
         post.comments.forEach(comment => {
             const commentContainer = document.createElement('div');
-            commentContainer.classList.add('comment-container', 'bg-white', );
+            commentContainer.classList.add('comment-container', 'bg-white');
             commentsContainer.appendChild(commentContainer);
 
             const commentText = document.createElement('p');

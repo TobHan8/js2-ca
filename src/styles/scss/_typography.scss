@@ -21,3 +21,15 @@ h1, h2 {
         display: none;
     }
 }
+
+.register-form label,
+.login-form label {
+    color: $primary;
+    font-size: clamp(14px, 2.5vw, 18px);
+    margin-bottom: -15px;
+}
+
+.reg-log-link {
+    font-size: $link-text-small;
+    margin: 20px;
+}
