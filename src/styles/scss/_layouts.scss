@@ -7,6 +7,15 @@ footer {
     height: 60px;
 }
 
+@media (max-width: 768px) {
+    header {
+        height: 60px;
+    }
+    footer {
+        height: 40px;
+    }
+}
+
 /* --- INDEX PAGE --- */
 .create-post-title {
     max-width: 300px;

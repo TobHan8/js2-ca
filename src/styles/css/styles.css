@@ -11885,25 +11885,21 @@ h1, h2 {
 }
 
 .reg-log-link {
-  font-size: clamp(14px, 2.5vw, 16px);
+  font-size: clamp(14px, 2.5vw, 17px);
   margin: 20px;
 }
 
 /* --- HEADER --- */
-.header-buttons {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  width: 100%;
-  padding: 1rem;
-}
-
 .header-buttons i {
   font-size: 44px;
 }
 
+@media (max-width: 760px) {
+  .header-buttons i {
+    font-size: 34px;
+  }
+}
 .toggleBtn-container {
-  display: flex;
   flex: 1;
 }
 
@@ -11917,27 +11913,24 @@ h1, h2 {
 }
 
 .dropdown-nav {
-  z-index: 5;
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  font-size: 22px;
-  top: 100%;
-  left: 0;
+  font-size: clamp(15px, 2vw, 22px);
   width: 400px;
-  background: #2E7AFF;
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.3s ease;
-  z-index: 25;
 }
 
-.dropdown-nav a {
+@media (max-width: 780px) {
+  .dropdown-nav {
+    width: 100%;
+  }
+}
+.dropdown-nav a,
+.menu-log-out-btn {
   z-index: 5;
   display: flex;
-  gap: 10px;
-  margin: 2rem;
+  gap: clamp(6px, 2vw, 10px);
+  margin: clamp(1rem, 2vw, 2rem);
   flex-direction: row-reverse;
   align-items: center;
   text-decoration: none;
@@ -11948,60 +11941,52 @@ h1, h2 {
 
 .header-buttons-right {
   display: flex;
-  justify-content: flex-end;
   flex: 1;
-  align-items: center;
   gap: 60px;
 }
 
-.header-login-btn {
-  background-color: #FFFFFF;
-  color: #2E7AFF;
-  border-radius: 25px;
-  padding: 12px 30px;
-  font-size: 15px;
-  font-weight: bold;
-  text-decoration: none;
-  transition: 0.3s ease;
-}
-
+.header-login-btn,
 .header-register-btn {
+  padding: 12px 30px;
+  border: none;
+  border-radius: 25px;
   background-color: #FFFFFF;
   color: #2E7AFF;
-  border-radius: 25px;
-  padding: 12px 25px;
-  font-size: 15px;
   font-weight: bold;
+  font-size: 15px;
   text-decoration: none;
   transition: 0.3s ease;
+  cursor: pointer;
+}
+@media (hover: hover) {
+  .header-login-btn:hover,
+  .header-register-btn:hover {
+    opacity: 30%;
+  }
+}
+.header-login-btn:active,
+.header-register-btn:active {
+  opacity: 30%;
 }
 
-.create-button i {
-  font-size: 37px;
+@media (max-width: 950px) {
+  .header-buttons-right {
+    display: none;
+  }
 }
-
 .menu-log-out-btn {
-  display: flex;
-  flex-direction: row-reverse;
-  font-size: 20px;
-  font-weight: bold;
-  gap: 10px;
+  padding: 0;
   background: transparent;
-  color: #FFFFFF;
   border: none;
-  margin: 2rem;
-  margin-left: 27px;
-  transition: 0.3s ease;
-}
-
-.menu-log-out-btn i {
-  font-size: 25px;
 }
 
 .header-logo {
-  height: 46px;
-  width: 100%;
   transition: 0.3s ease;
+}
+
+.header-logo img {
+  height: clamp(36px, 6vw, 46px);
+  width: 100%;
 }
 
 .header-create-btn {
@@ -12022,46 +12007,98 @@ h1, h2 {
   background-color: #2E7AFF;
   color: #FFFFFF;
   font-weight: bold;
-  font-size: clamp(15px, 2.5vw, 20px);
+  font-size: clamp(15px, 2.5vw, 18px);
+  text-decoration: none;
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+@media (hover: hover) {
+  .publish-button:hover,
+  .load-more-btn:hover {
+    opacity: 30%;
+  }
+}
+.publish-button:active,
+.load-more-btn:active {
+  opacity: 30%;
 }
 
-/* --- SUBMIT REGISTER/LOGIN BUTTON --- */
-.submit-btn {
+/* --- REGISTER/LOGIN BUTTONS --- */
+.reg-log-btn {
   padding: 12px 30px;
   border: none;
   border-radius: 25px;
   background-color: #2E7AFF;
   color: #FFFFFF;
   font-weight: bold;
-  font-size: 15px;
+  font-size: clamp(15px, 2.5vw, 18px);
+  text-decoration: none;
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+@media (hover: hover) {
+  .reg-log-btn:hover {
+    opacity: 30%;
+  }
+}
+.reg-log-btn:active {
+  opacity: 30%;
+}
+.reg-log-btn {
   width: fit-content;
   align-self: center;
 }
 
 /* --- SINGLE POST AND PROFILE BUTTONS --- */
 .single-post-edit-btn,
-.single-post-del-btn,
 .single-post-update-btn,
-.follow-btn,
+.follow-btn {
+  padding: 10px 18px;
+  border: none;
+  border-radius: 25px;
+  background-color: #2E7AFF;
+  color: #FFFFFF;
+  font-weight: bold;
+  font-size: 12px;
+  text-decoration: none;
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+@media (hover: hover) {
+  .single-post-edit-btn:hover,
+  .single-post-update-btn:hover,
+  .follow-btn:hover {
+    opacity: 30%;
+  }
+}
+.single-post-edit-btn:active,
+.single-post-update-btn:active,
+.follow-btn:active {
+  opacity: 30%;
+}
+
+.single-post-del-btn,
 .unfollow-btn {
   padding: 10px 18px;
   border: none;
   border-radius: 25px;
-  font-weight: bold;
-  font-size: 12px;
-}
-
-.single-post-edit-btn,
-.single-post-update-btn,
-.follow-btn {
-  background-color: #2E7AFF;
-  color: #FFFFFF;
-}
-
-.single-post-del-btn,
-.unfollow-btn {
   background-color: #FF0000;
   color: #FFFFFF;
+  font-weight: bold;
+  font-size: 12px;
+  text-decoration: none;
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+@media (hover: hover) {
+  .single-post-del-btn:hover,
+  .unfollow-btn:hover {
+    opacity: 30%;
+  }
+}
+.single-post-del-btn:active,
+.unfollow-btn:active {
+  opacity: 30%;
 }
 
 .single-post-save-btn {
@@ -12074,22 +12111,12 @@ h1, h2 {
   .create-button:hover,
   .header-profile-btn:hover,
   nav a:hover,
-  .header-login-btn:hover,
-  .header-register-btn:hover,
   .menu-log-out-btn:hover,
   .profile-log-out-btn:hover,
   .close-btn:hover,
   .header-logo:hover,
-  .submit-btn:hover,
-  .register-link:hover,
   .reg-log-link:hover,
-  .single-post-del-btn:hover,
-  .single-post-edit-btn:hover,
-  .single-post-update-btn:hover,
-  .follow-btn:hover,
-  .unfollow-btn:hover,
-  .load-more-btn:hover,
-  .publish-button:hover {
+  .single-post-avatar-container:hover {
     opacity: 30%;
     cursor: pointer;
   }
@@ -12105,16 +12132,8 @@ nav a:active,
 .profile-log-out-btn:active,
 .close-btn:active,
 .header-logo:active,
-.submit-btn:active,
 .reg-log-link:active,
-.single-post-avatar-container:active,
-.single-post-del-btn:active,
-.single-post-edit-btn:active,
-.single-post-update-btn:active,
-.follow-btn:active,
-.unfollow-btn:active,
-.load-more-btn:active,
-.publish-button:active {
+.single-post-avatar-container:active {
   opacity: 30%;
   cursor: pointer;
 }
@@ -12127,6 +12146,14 @@ footer {
   height: 60px;
 }
 
+@media (max-width: 768px) {
+  header {
+    height: 60px;
+  }
+  footer {
+    height: 40px;
+  }
+}
 /* --- INDEX PAGE --- */
 .create-post-title {
   max-width: 300px;

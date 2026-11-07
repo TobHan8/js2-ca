@@ -1,11 +1,21 @@
 @use "variables" as *;
 
-@mixin pill-button($font-size: 15px, $bg: $primary) {
-    padding: 12px 30px;
+@mixin pill-btn($font-size: 15px, $padding: 12px 30px, $bg: $primary, $color: $white) {
+    padding: $padding;
     border: none;
     border-radius: 25px;
     background-color: $bg;
-    color: $white;
+    color: $color;
     font-weight: bold;
     font-size: $font-size;
+    text-decoration: none;
+    transition: 0.3s ease;
+    cursor: pointer;
+
+
+    @media (hover: hover) {
+        &:hover { opacity: 30%; }
+    }
+
+    &:active { opacity: 30%; }
 }

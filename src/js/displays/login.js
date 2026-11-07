@@ -28,7 +28,7 @@ export function displayLogin() {
                 <label class="fw-bold" for="password">Password</label>
                 <input id="password" class="form-control form-control-lg" name="password" type="password" placeholder="Enter your password" minlength="8" required="true">
 
-                <button id="submit-btn" class="submit-btn">LOG IN</button>
+                <button id="submit-btn" class="reg-log-btn">LOG IN</button>
 
             </form>
 

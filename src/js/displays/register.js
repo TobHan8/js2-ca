@@ -32,7 +32,7 @@ export function displayRegister() {
                 <label class="fw-bold" for="password2">Confirm password</label>
                 <input id="password2" class="form-control form-control-lg" name="password2" type="password" placeholder="Repeat password" minlength="8" required="true">
 
-                <button id="submit-btn" class="submit-btn">REGISTER</button>
+                <button id="submit-btn" class="reg-log-btn">REGISTER</button>
 
             </form>
 

@@ -6,11 +6,11 @@ export function displayHeader() {
     header.innerHTML = '';
     
     const headerNav = document.createElement('nav');
-    headerNav.classList.add('header-buttons');
+    headerNav.classList.add('header-buttons', 'd-flex', 'align-items-center', 'justify-content-around', 'p-md-4', 'w-100');
     header.appendChild(headerNav);
 
     const toggleBtnContainer = document.createElement('div');
-    toggleBtnContainer.classList.add('toggleBtn-container');
+    toggleBtnContainer.classList.add('toggleBtn-container', 'd-flex');
     headerNav.appendChild(toggleBtnContainer);
 
     const toggleBtn = document.createElement('button');
@@ -36,7 +36,7 @@ export function displayHeader() {
     });
 
     const headerLogoContainer = document.createElement('div');
-    headerLogoContainer.classList.add('header-logo-container');
+    headerLogoContainer.classList.add('header-logo-container', 'position-absolute', 'top-50', 'start-50', 'translate-middle');
     headerNav.appendChild(headerLogoContainer);
 
     const headerLogo = document.createElement('a');
@@ -52,7 +52,7 @@ export function displayHeader() {
     headerLogo.appendChild(logoImg);
 
     const buttonsRight = document.createElement('div');
-    buttonsRight.classList.add('header-buttons-right');
+    buttonsRight.classList.add('header-buttons-right', 'justify-content-end', 'align-items-center');
     headerNav.appendChild(buttonsRight);
 
     const loginBtn = document.createElement('a');
@@ -70,7 +70,7 @@ export function displayHeader() {
     buttonsRight.appendChild(registerBtn);
 
     const dropdownNav = document.createElement('nav');
-    dropdownNav.classList.add('dropdown-nav')
+    dropdownNav.classList.add('dropdown-nav', 'z-5', 'position-absolute', 'd-flex', 'flex-column', 'align-items-start', 'top-100', 'left-0', 'bg-primary');
     header.appendChild(dropdownNav);
 
     const homeLink = document.createElement('a');
@@ -185,14 +185,14 @@ function headerToggle() {
             dropdown.style.maxHeight = '600px';
             dropdown.style.overflow = 'auto';
             toggleBtnIcon.style.display = 'none';
-            toggleBtnIcon2.style.display = 'flex';
+            toggleBtnIcon2.style.display = '';
             currentState = 1;
 
         } else {
             dropdown.style.maxHeight = '0';
             dropdown.style.overflow = 'hidden';
             toggleBtnIcon2.style.display = 'none'
-            toggleBtnIcon.style.display = 'flex'
+            toggleBtnIcon.style.display = ''
             currentState = 0;
         }
 }
