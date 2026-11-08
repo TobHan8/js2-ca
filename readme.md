@@ -41,11 +41,17 @@ npm run watch
 ## Stylesheet organization and structure
 
 styles.scss - Serves as an entry point to load Bootstrap and other partial stylesheets
+
 _variables.scss - Common values for styling and design to be passed to Bootstrap
+
 _mixins.scss - Reusable combinations of styles, for example custom pill button design
+
 _typography.scss - Styling rules related to text
+
 _components - Styling rules related to interactive components
+
 _layouts - Styling rules related to layout, containers and page structure
+
 style.css - File for compiled output, this is the only stylesheet file that gets linked in HTML
 
 ## Technologies
