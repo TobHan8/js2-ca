@@ -33,7 +33,7 @@ Compile all stylesheets once:
 npm run build
 ```
 
-Compile stylesheets on every change/save automatically:
+Compile stylesheets on every change/save automatically (Use this when developing):
 ```bash
 npm run watch
 ```
