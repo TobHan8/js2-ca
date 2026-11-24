@@ -10,7 +10,7 @@ export function displaySinglePost() {
             <div id="single-post-container" class="single-post-container d-flex flex-column flex-md-row position-relative bg-white p-4"></div>
 
             <div id="title-container" class="d-flex justify-content-center my-5">
-                <h2>COMMENTS</h2>
+                <h2 class="text-primary">COMMENTS</h2>
             </div>
         `
     } else {

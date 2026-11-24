@@ -11856,7 +11856,7 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
-h1, h2 {
+h1 {
   color: #2E7AFF;
 }
 
@@ -11961,12 +11961,12 @@ h1, h2 {
 @media (hover: hover) {
   .header-login-btn:hover,
   .header-register-btn:hover {
-    opacity: 30%;
+    opacity: 60%;
   }
 }
 .header-login-btn:active,
 .header-register-btn:active {
-  opacity: 30%;
+  opacity: 60%;
 }
 
 @media (max-width: 950px) {
@@ -12015,12 +12015,12 @@ h1, h2 {
 @media (hover: hover) {
   .publish-button:hover,
   .load-more-btn:hover {
-    opacity: 30%;
+    opacity: 60%;
   }
 }
 .publish-button:active,
 .load-more-btn:active {
-  opacity: 30%;
+  opacity: 60%;
 }
 
 /* --- REGISTER/LOGIN BUTTONS --- */
@@ -12038,11 +12038,11 @@ h1, h2 {
 }
 @media (hover: hover) {
   .reg-log-btn:hover {
-    opacity: 30%;
+    opacity: 60%;
   }
 }
 .reg-log-btn:active {
-  opacity: 30%;
+  opacity: 60%;
 }
 .reg-log-btn {
   width: fit-content;
@@ -12068,13 +12068,13 @@ h1, h2 {
   .single-post-edit-btn:hover,
   .single-post-update-btn:hover,
   .follow-btn:hover {
-    opacity: 30%;
+    opacity: 60%;
   }
 }
 .single-post-edit-btn:active,
 .single-post-update-btn:active,
 .follow-btn:active {
-  opacity: 30%;
+  opacity: 60%;
 }
 
 .single-post-del-btn,
@@ -12093,12 +12093,12 @@ h1, h2 {
 @media (hover: hover) {
   .single-post-del-btn:hover,
   .unfollow-btn:hover {
-    opacity: 30%;
+    opacity: 60%;
   }
 }
 .single-post-del-btn:active,
 .unfollow-btn:active {
-  opacity: 30%;
+  opacity: 60%;
 }
 
 .single-post-save-btn {
@@ -12192,11 +12192,13 @@ footer {
   padding: 20px;
   border-radius: 25px;
   background-color: #FFFFFF;
+  transition: 0.3s ease;
 }
 
 @media (hover: hover) {
   .index-post-container:hover {
     background-color: #2E7AFF;
+    color: #FFFFFF;
   }
 }
 .index-created {
@@ -12241,6 +12243,15 @@ footer {
   transition: 0.3s ease;
 }
 
+@media (max-width: 768px) {
+  .single-post-avatar-container {
+    height: 75px;
+    width: 75px;
+  }
+  .single-post-author-container span {
+    font-size: 15px;
+  }
+}
 .single-post-avatar-container img {
   display: block;
   width: 100%;
@@ -12301,10 +12312,7 @@ footer {
 }
 /* --- PROFILE PAGE --- */
 .profile-container {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  width: 800px;
+  max-width: 800px;
   min-height: 300px;
   background-color: #FFFFFF;
   border: #2E7AFF;
@@ -12316,8 +12324,7 @@ footer {
 
 .profile-banner-container {
   position: relative;
-  display: flex;
-  width: 760px;
+  max-width: 760px;
   overflow: hidden;
   border-radius: 25px;
   height: 200px;
@@ -12342,6 +12349,14 @@ footer {
   border: solid 4px #FFFFFF;
 }
 
+@media (max-width: 768px) {
+  .profile-avatar-container {
+    top: unset;
+    bottom: 20px;
+    height: 100px;
+    width: 100px;
+  }
+}
 .profile-avatar-container img {
   display: block;
   width: 100%;
@@ -12366,6 +12381,28 @@ footer {
   margin: 0;
 }
 
+@media (max-width: 768px) {
+  .profile-title-container {
+    top: unset;
+    bottom: 20px;
+    left: 140px;
+  }
+  .profile-title-container h1 {
+    font-size: 25px;
+  }
+}
+@media (max-width: 500px) {
+  .profile-title-container {
+    left: 100px;
+  }
+  .profile-title-container h1 {
+    font-size: 15px;
+  }
+  .profile-avatar-container {
+    height: 75px;
+    width: 75px;
+  }
+}
 .profile-bot-container {
   display: flex;
   flex-direction: row;
@@ -12382,6 +12419,34 @@ footer {
   display: flex;
   width: 100%;
   justify-content: flex-end;
+  height: fit-content;
+}
+
+@media (max-width: 768px) {
+  .profile-count-container {
+    flex-direction: column;
+    width: 100%;
+    gap: 20px;
+  }
+}
+@media (max-width: 420px) {
+  .profile-bot-container {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    gap: 20px;
+  }
+  .profile-count-container {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  .profile-count-container span {
+    font-size: 12px;
+  }
+  .profile-btns-container {
+    justify-content: center;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */

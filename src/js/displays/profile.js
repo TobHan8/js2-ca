@@ -7,8 +7,8 @@ export function displayProfile() {
 
     if (state.isLoggedIn) {
         return `
-            <div id="profile-container" class="profile-container">
-                <div id="profile-banner-container" class="profile-banner-container">
+            <div id="profile-container" class="profile-container d-flex flex-column">
+                <div id="profile-banner-container" class="profile-banner-container d-flex">
                     <img id="profile-banner">
                     <div class="profile-avatar-container">
                         <img id="profile-avatar">
@@ -21,7 +21,7 @@ export function displayProfile() {
                 </div>
             </div>
 
-            <div id="profile-posts-container" class="index-container"></div>
+            <div id="profile-posts-container" class="d-flex flex-column gap-5 mb-5"></div>
         `;
     } else {
         setTimeout(() => {
@@ -90,11 +90,21 @@ export async function initProfile() {
                 profilePostTitle.classList.add('index-post-title')
                 profilePostTitle.textContent = `${post.title}`;
                 profilePostContainer.appendChild(profilePostTitle);
-    
-                const profilePostBody = document.createElement('p');
-                profilePostBody.classList.add('index-post-body');
-                profilePostBody.textContent = `${post.body}`;
-                profilePostContainer.appendChild(profilePostBody);
+
+                const body = post.body;
+                if (body.length > 80) {
+                    const slicedBody = body.slice(0, 80) + '...';
+                    const profilePostBody = document.createElement('p');
+                    profilePostBody.classList.add('index-post-body', 'text-break');
+                    profilePostBody.textContent = slicedBody;
+                    profilePostContainer.appendChild(profilePostBody);
+
+                } else { 
+                    const profilePostBody = document.createElement('p');
+                    profilePostBody.classList.add('index-post-body');
+                    profilePostBody.textContent = `${post.body}`;
+                    profilePostContainer.appendChild(profilePostBody);
+                }
     
                 const profilePostCreated = document.createElement('span');
                 profilePostCreated.classList.add('index-created');
