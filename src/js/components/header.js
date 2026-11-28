@@ -70,7 +70,7 @@ export function displayHeader() {
     buttonsRight.appendChild(registerBtn);
 
     const dropdownNav = document.createElement('nav');
-    dropdownNav.classList.add('dropdown-nav', 'z-5', 'position-absolute', 'd-flex', 'flex-column', 'align-items-start', 'top-100', 'left-0', 'bg-primary');
+    dropdownNav.classList.add('dropdown-nav', 'z-3', 'position-absolute', 'd-flex', 'flex-column', 'align-items-start', 'top-100', 'start-0', 'bg-primary');
     header.appendChild(dropdownNav);
 
     const homeLink = document.createElement('a');

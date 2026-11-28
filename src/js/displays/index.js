@@ -40,7 +40,7 @@ export function displayIndex() {
         </div>
         `
     }
-}
+} 
 
 export async function initIndex() {
 
